@@ -1,0 +1,6 @@
+apps_color_mode = 'Dark'
+notifications = 'Enabled'
+show_accent_color_on_start_and_task_bar = 'Disabled'
+system_color_mode = 'Dark'
+text_size = 100
+transparency_effects = 'Enabled'

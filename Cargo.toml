@@ -1,0 +1,19 @@
+[package]
+name = "nazm"
+version = "0.1.0"
+authors = ["Jad <jadeiqbal@fastamil.com>"]
+description = "Declarative configuration management for Windows 11"
+repository = "https://github.com/LGUG2Z/nazm"
+license = "GPL-3"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_either = "0.2"
+similar-asserts = { version = "1", features = ["serde"] }
+toml = { version = "0.5" }
+winreg = { version = "0.10" }
