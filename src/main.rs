@@ -24,14 +24,15 @@ fn main() -> anyhow::Result<()> {
         }
         SubCommand::Apply(args) => {
             let current = Config::export()?;
+            let previous_state = current.to_string();
+
             let desired = Config::from_path(args.file)?;
 
             if current.eq(&desired) {
-                println!("No changes required!");
+                println!("No differences found!");
                 return Ok(());
             }
 
-            let previous_state = current.apply()?.to_string();
             let new_state = desired.apply()?.to_string();
 
             let diff =

@@ -1,7 +1,10 @@
-apps_color_mode = 'Dark'
 always_show_scrollbars = 'Enabled'
+apps_color_mode = 'Dark'
 notifications = 'Enabled'
-show_accent_color_on_start_and_task_bar = 'Disabled'
+show_accent_color_on_start_and_taskbar = 'Disabled'
 system_color_mode = 'Dark'
+taskbar_items_chat = 'Disabled'
+taskbar_items_task_view = 'Disabled'
+taskbar_items_widgets = 'Disabled'
 text_size = 100
 transparency_effects = 'Enabled'

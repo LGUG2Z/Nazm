@@ -11,12 +11,12 @@ use winreg::HKEY;
 use crate::registry::Setting;
 
 #[derive(Debug, Serialize, Deserialize, Eq, PartialEq, Copy, Clone)]
-pub enum ShowAccentColorOnStartAndTaskbar {
+pub enum TaskbarItemsTaskView {
     Disabled,
     Enabled,
 }
 
-impl FromRegValue for ShowAccentColorOnStartAndTaskbar {
+impl FromRegValue for TaskbarItemsTaskView {
     fn from_reg_value(reg_value: &RegValue) -> std::io::Result<Self> {
         let value = u32::from_reg_value(reg_value)?;
         Ok(match value {
@@ -27,7 +27,7 @@ impl FromRegValue for ShowAccentColorOnStartAndTaskbar {
     }
 }
 
-impl ToRegValue for ShowAccentColorOnStartAndTaskbar {
+impl ToRegValue for TaskbarItemsTaskView {
     fn to_reg_value(&self) -> RegValue {
         match self {
             Self::Disabled => 0_u32.to_reg_value(),
@@ -36,16 +36,16 @@ impl ToRegValue for ShowAccentColorOnStartAndTaskbar {
     }
 }
 
-impl Setting for ShowAccentColorOnStartAndTaskbar {
+impl Setting for TaskbarItemsTaskView {
     fn hkey() -> HKEY {
         HKEY_CURRENT_USER
     }
 
     fn subkey() -> &'static str {
-        r"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize"
+        r"Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
     }
 
     fn value() -> &'static str {
-        r"ColorPrevalence"
+        r"ShowTaskViewButton"
     }
 }
