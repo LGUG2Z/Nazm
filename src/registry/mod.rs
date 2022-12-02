@@ -1,3 +1,4 @@
+mod always_show_scrollbars;
 mod apps_color_mode;
 mod notifications;
 mod show_accent_color_on_start_and_taskbar;
@@ -5,6 +6,7 @@ mod system_color_mode;
 mod text_size;
 mod transparency_effects;
 
+pub use always_show_scrollbars::AlwaysShowScrollbars;
 pub use apps_color_mode::AppsColorMode;
 pub use notifications::Notifications;
 pub use show_accent_color_on_start_and_taskbar::ShowAccentColorOnStartAndTaskBar;

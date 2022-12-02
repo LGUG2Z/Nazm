@@ -1,4 +1,5 @@
 apps_color_mode = 'Dark'
+always_show_scrollbars = 'Enabled'
 notifications = 'Enabled'
 show_accent_color_on_start_and_task_bar = 'Disabled'
 system_color_mode = 'Dark'

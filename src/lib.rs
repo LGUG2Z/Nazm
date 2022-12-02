@@ -21,9 +21,12 @@ pub use registry::TransparencyEffects;
 use serde::Deserialize;
 use serde::Serialize;
 
+use crate::registry::AlwaysShowScrollbars;
+
 #[derive(Eq, PartialEq, Serialize, Deserialize)]
 pub struct Config {
     pub apps_color_mode: AppsColorMode,
+    pub always_show_scrollbars: AlwaysShowScrollbars,
     pub notifications: Notifications,
     pub show_accent_color_on_start_and_task_bar: ShowAccentColorOnStartAndTaskBar,
     pub system_color_mode: SystemColorMode,
@@ -35,6 +38,7 @@ impl Config {
     pub fn export() -> std::io::Result<Self> {
         Ok(Self {
             apps_color_mode: NazmSetting::get()?,
+            always_show_scrollbars: NazmSetting::get()?,
             notifications: NazmSetting::get()?,
             show_accent_color_on_start_and_task_bar: NazmSetting::get()?,
             system_color_mode: NazmSetting::get()?,
@@ -45,6 +49,7 @@ impl Config {
 
     pub fn apply(self) -> std::io::Result<Self> {
         NazmSetting::set(self.apps_color_mode)?;
+        NazmSetting::set(self.always_show_scrollbars)?;
         NazmSetting::set(self.notifications)?;
         NazmSetting::set(self.show_accent_color_on_start_and_task_bar)?;
         NazmSetting::set(self.system_color_mode)?;
